@@ -1,3 +1,0 @@
-# IntelliJ
-.DS_Store
-.idea
