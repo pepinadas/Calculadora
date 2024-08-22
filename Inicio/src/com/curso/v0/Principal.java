@@ -1,28 +1,25 @@
 package com.curso.v0;
 
 public class Principal {
-	
+
 	public static void main(String[] args) {
 		
-		int x = 5;
-		x = 10; //0 Objetos
-		//x = null; //ERROR DE COMPILACION
-		
-		String cadena = "Hello"; //INMUTABLE EL OBJETO
-		//cadena = "Hola";
-		
-		cadena.concat(" World"); //2 
-		System.out.println(cadena); //Hello
-		
-		StringBuilder sb = new StringBuilder("Hello"); //MUTABLE
-		sb.append("World"); //1
-		System.out.println(sb); //Hello World
-		
-		String otraCadena = "Hola";
-		otraCadena = null;
-		System.out.println(otraCadena);
-		
+		System.out.println("V1");
+			                 
+		Operacion[] operaciones  = {new Suma(8,4),
+									new Resta(8,4),
+									new Potencia(8,4),
+									new Multi(8,4),
+									new Division(8,4)};
+		show(operaciones);
+	}
 	
+	static void show(Operacion[] opes) {
+		//POLIMORFISMO
+		for(Operacion o:opes) {
+			System.out.println(o);
+			System.out.println(o.ejecuta());
+		}
 	}
 
 }
