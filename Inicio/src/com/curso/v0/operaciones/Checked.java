@@ -10,4 +10,9 @@ public class Checked {
             return false;
         }
     }
+
+    public static double isNotNumeric() {
+        System.out.println("Este no es un numerico, se usara por defecto 0");
+        return 0;
+    }
 }

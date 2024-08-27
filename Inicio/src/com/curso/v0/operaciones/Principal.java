@@ -12,7 +12,7 @@ public class Principal {
 
     public static void main(String[] args) {
         double num1, num2;
-        String opcion="";
+        String opcion="s";
         double resultado;
         num1 = 0;
         num2 = 0;
@@ -44,21 +44,12 @@ public class Principal {
 
             Operacion operacion = null;
 
-            do {
+            Bob: do {
                 // Seleccionar el tipo de operacion
                 System.out.println("Selecciona la operación: +, -, *, /");
                 char oper = scanner.next().charAt(0);
                 scanner.nextLine();
 
-                // Solicitar el primer número
-                System.out.print("Por favor, ingresa el primer número: ");
-                String tmp1 = scanner.nextLine();
-                num1 = Checked.isDouble(tmp1) ? Double.parseDouble(tmp1) : 0;
-
-                // Solicitar el segundo número
-                System.out.print("\nPor favor, ingresa el segundo número: ");
-                String tmp2 = scanner.nextLine();
-                num2 = Checked.isDouble(tmp2) ? Double.parseDouble(tmp2) : 0;
 
                 switch (oper) {
                     case '+':
@@ -75,7 +66,21 @@ public class Principal {
                         break;
                     default:
                         System.out.println("Operación no válida");
+                        continue Bob;
                 }
+
+
+                // Solicitar el primer número
+                System.out.print("Por favor, ingresa el primer número: ");
+                String tmp1 = scanner.nextLine();
+                num1 = Checked.isDouble(tmp1) ? Double.parseDouble(tmp1) : Checked.isNotNumeric();
+
+                // Solicitar el segundo número
+                System.out.print("\nPor favor, ingresa el segundo número: ");
+                String tmp2 = scanner.nextLine();
+                num2 = Checked.isDouble(tmp2) ? Double.parseDouble(tmp2) : Checked.isNotNumeric();
+
+
 
                 if (operacion != null) {
                     resultado = operacion.ejecutar(num1, num2);
