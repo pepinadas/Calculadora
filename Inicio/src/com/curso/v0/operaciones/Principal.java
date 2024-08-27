@@ -36,7 +36,7 @@ public class Principal {
 
             Bob: do {
                 // Seleccionar el tipo de operacion
-                System.out.println("Selecciona la operación: +, -, *, /");
+                System.out.println("Selecciona la operación: +, -, *, /, ^");
                 char oper = scanner.next().charAt(0);
                 scanner.nextLine();
 
@@ -52,6 +52,9 @@ public class Principal {
                         break;
                     case '/':
                         operacion = new Division();
+                        break;
+                    case '^':
+                        operacion = new Potencia();
                         break;
                     default:
                         System.out.println("Operación no válida");
