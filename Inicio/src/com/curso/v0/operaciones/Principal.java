@@ -40,7 +40,6 @@ public class Principal {
                 char oper = scanner.next().charAt(0);
                 scanner.nextLine();
 
-
                 switch (oper) {
                     case '+':
                         operacion = new Suma();
@@ -59,16 +58,27 @@ public class Principal {
                         continue Bob;
                 }
 
-
                 // Solicitar el primer número
                 System.out.print("Por favor, ingresa el primer número: ");
                 String tmp1 = scanner.nextLine();
-                num1 = Checked.isDouble(tmp1) ? Double.parseDouble(tmp1) : Checked.isNotNumeric();
+                if (Checked.isDouble(tmp1)) {
+                    num1 = Double.parseDouble(tmp1);
+                } else {
+                    System.out.println("El valor ingresado no es numérico");
+                    continue Bob;
+                }
 
                 // Solicitar el segundo número
                 System.out.print("\nPor favor, ingresa el segundo número: ");
                 String tmp2 = scanner.nextLine();
-                num2 = Checked.isDouble(tmp2) ? Double.parseDouble(tmp2) : Checked.isNotNumeric();
+                if (Checked.isDouble(tmp2)) {
+                    num2 = Double.parseDouble(tmp2);
+                } else {
+                    System.out.println("El valor ingresado no es numérico");
+                    continue Bob;
+                }
+
+                
 
 
 
@@ -84,4 +94,3 @@ public class Principal {
         }
     }
 }
-
