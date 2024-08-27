@@ -48,6 +48,7 @@ public class Principal {
                 // Seleccionar el tipo de operacion
                 System.out.println("Selecciona la operación: +, -, *, /");
                 char oper = scanner.next().charAt(0);
+                scanner.nextLine();
 
                 // Solicitar el primer número
                 System.out.print("Por favor, ingresa el primer número: ");
