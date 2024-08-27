@@ -6,7 +6,7 @@ public class Dividir implements Operacion {
 
 
     @Override
-    public double ejecuta(double x, double y) {
+    public double ejecuta(double x, double y)   {
         return x / y ;
     }
 }
