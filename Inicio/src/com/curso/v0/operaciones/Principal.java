@@ -12,6 +12,8 @@ public class Principal {
 
     public static void main(String[] args) {
         double num1, num2;
+        num1 = 0;
+        num2 = 0;
         if(args != null){
             if( args.length == 2){
                 try {
@@ -46,7 +48,7 @@ public class Principal {
         }
 
         Operacion operando = new Suma();
-        System.out.println(operando.ejecuta(num1, num2));
+        System.out.println(operando.ejecutar(num1, num2));
     }
 
 }

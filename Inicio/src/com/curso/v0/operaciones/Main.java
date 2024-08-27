@@ -1,44 +1,8 @@
+package com.curso.v0.operaciones;
+import com.curso.v0.operaciones.Interface.Operacion;
+import com.curso.v0.operaciones.OperacionBase;
+
 import java.util.Scanner;
-
-
-interface Operacion {
-    double ejecutar(double a, double b);
-}
-
-abstract class OperacionBase implements Operacion {
-    public abstract double ejecutar(double a, double b);
-}
-
-
-class Suma extends OperacionBase {
-    public double ejecutar(double a, double b) {
-        return a + b;
-    }
-}
-
-class Resta extends OperacionBase {
-    public double ejecutar(double a, double b) {
-        return a - b;
-    }
-}
-
-class Multiplicacion extends OperacionBase {
-    public double ejecutar(double a, double b) {
-        return a * b;
-    }
-}
-
-class Division extends OperacionBase {
-    public double ejecutar(double a, double b) {
-        if (b != 0) {
-            return a / b;
-        } else {
-            System.out.println("Error: División por cero no permitida.");
-            return 0;
-        }
-    }
-}
-
 
 class Calculadora {
     public static void main(String[] args) {

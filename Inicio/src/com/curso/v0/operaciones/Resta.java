@@ -2,11 +2,9 @@ package com.curso.v0.operaciones;
 
 import com.curso.v0.operaciones.Interface.Operacion;
 
-public class Resta implements Operacion {
-
-
+public class Resta extends OperacionBase {
     @Override
-    public double ejecuta(double x, double y) {
-        return x - y ;
+    public double ejecutar(double a, double b) {
+        return a - b;
     }
 }

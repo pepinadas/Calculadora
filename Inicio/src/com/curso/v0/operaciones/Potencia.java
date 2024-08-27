@@ -6,7 +6,7 @@ public class Potencia implements Operacion {
 
 
     @Override
-    public double ejecuta(double x, double y) {
+    public double ejecutar(double x, double y) {
         return (double)(Math.pow(x, y));
     }
 }
