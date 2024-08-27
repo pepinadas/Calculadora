@@ -6,7 +6,7 @@ public class Multi extends Operacion {
 		super(x,y);
 	}
 	
-	@Override
+//	@Override
 	int ejecuta(){
 		return x*y;
 	}
