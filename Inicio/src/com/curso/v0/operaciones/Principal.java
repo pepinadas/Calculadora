@@ -1,45 +1,35 @@
 package com.curso.v0.operaciones;
 
 import java.util.Scanner;
-
 import com.curso.v0.operaciones.Interface.Operacion;
-
-import java.util.Scanner;
-
-import static com.curso.v0.operaciones.Checked.isDouble;
 
 public class Principal {
 
     public static void main(String[] args) {
-        double num1, num2;
         String opcion="s";
+        double num1 = 0, num2 = 0;
         double resultado;
-        num1 = 0;
-        num2 = 0;
-
 
         if(args.length > 0){
-            if( args.length == 2){
+            if(args.length == 2){
                 try {
                     num1 = Double.parseDouble(args[0]);
                     num2 = Double.parseDouble(args[1]);    
-                } catch (Exception NumberFormatException) {
-                    System.out.println("El valor ingresado no es numerico");
+                } catch (NumberFormatException e) {
+                    System.out.println("El valor ingresado no es numérico");
+                    return;
                 }
             }
-        }
-        else{
-
+        } else {
             Scanner scanner = new Scanner(System.in);
-    
+
             System.out.println("╔═════════════════════════════════════╗");
             System.out.println("║      Bienvenid@ a la Calculadora    ║");
             System.out.println("╚═════════════════════════════════════╝");
-    
+
             System.out.print("Por favor, ingresa tu nombre: ");
             String nombre = scanner.nextLine();
-    
-            // Saludar al usuario
+
             System.out.println("\n¡Hola, " + nombre + "! Vamos a realizar algunas operaciones matemáticas.\n");
 
             Operacion operacion = null;
@@ -91,12 +81,7 @@ public class Principal {
                 opcion = scanner.next();
 
             } while (opcion.equalsIgnoreCase("s"));
-
-
         }
-
-        Operacion operacion = new Suma();
-        System.out.println(operacion.ejecutar(num1, num2));
     }
-
 }
+
