@@ -14,7 +14,8 @@ public class Principal {
         double num1, num2;
         num1 = 0;
         num2 = 0;
-        if(args != null){
+
+        if(args.length > 0){
             if( args.length == 2){
                 try {
                     num1 = Double.parseDouble(args[0]);
