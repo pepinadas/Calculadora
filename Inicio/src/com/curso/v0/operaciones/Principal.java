@@ -12,8 +12,11 @@ public class Principal {
 
     public static void main(String[] args) {
         double num1, num2;
+        String opcion="";
+        double resultado;
         num1 = 0;
         num2 = 0;
+
 
         if(args.length > 0){
             if( args.length == 2){
@@ -38,18 +41,56 @@ public class Principal {
     
             // Saludar al usuario
             System.out.println("\n¡Hola, " + nombre + "! Vamos a realizar algunas operaciones matemáticas.\n");
-    
-            // Solicitar el primer número
-            System.out.print("Por favor, ingresa el primer número: ");
-            num1 = scanner.nextDouble();
-    
-            // Solicitar el segundo número
-            System.out.print("Por favor, ingresa el segundo número: ");
-            num2 = scanner.nextDouble();
+
+            Operacion operacion = null;
+
+            do {
+                // Seleccionar el tipo de operacion
+                System.out.println("Selecciona la operación: +, -, *, /");
+                char oper = scanner.next().charAt(0);
+
+                // Solicitar el primer número
+                System.out.print("Por favor, ingresa el primer número: ");
+                String tmp1 = scanner.nextLine();
+                num1 = Checked.isDouble(tmp1) ? Double.parseDouble(tmp1) : 0;
+
+                // Solicitar el segundo número
+                System.out.print("\nPor favor, ingresa el segundo número: ");
+                String tmp2 = scanner.nextLine();
+                num2 = Checked.isDouble(tmp2) ? Double.parseDouble(tmp2) : 0;
+
+                switch (oper) {
+                    case '+':
+                        operacion = new Suma();
+                        break;
+                    case '-':
+                        operacion = new Resta();
+                        break;
+                    case '*':
+                        operacion = new Multiplicacion();
+                        break;
+                    case '/':
+                        operacion = new Division();
+                        break;
+                    default:
+                        System.out.println("Operación no válida");
+                }
+
+                if (operacion != null) {
+                    resultado = operacion.ejecutar(num1, num2);
+                    System.out.println("El resultado es: " + resultado);
+                }
+
+                System.out.print("¿Deseas realizar otra operación? (s/n): ");
+                opcion = scanner.next();
+
+            } while (opcion.equalsIgnoreCase("s"));
+
+
         }
 
-        Operacion operando = new Suma();
-        System.out.println(operando.ejecutar(num1, num2));
+        Operacion operacion = new Suma();
+        System.out.println(operacion.ejecutar(num1, num2));
     }
 
 }
