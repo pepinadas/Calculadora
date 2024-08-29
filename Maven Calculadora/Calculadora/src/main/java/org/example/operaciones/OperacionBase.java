@@ -1,6 +1,7 @@
-package com.curso.v0.operaciones;
+package org.example.operaciones;
 
-import com.curso.v0.operaciones.Interface.Operacion;
+
+import org.example.operaciones.Interface.Operacion;
 
 public abstract class OperacionBase implements Operacion {
     public abstract double ejecutar(double a, double b);

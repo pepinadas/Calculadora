@@ -1,4 +1,4 @@
-package com.curso.v0.operaciones;
+package org.example.operaciones;
 
 public class Checked {
 

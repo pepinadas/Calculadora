@@ -1,7 +1,8 @@
-package com.curso.v0.operaciones;
+package org.example.operaciones;
+
+import org.example.operaciones.Interface.Operacion;
 
 import java.util.Scanner;
-import com.curso.v0.operaciones.Interface.Operacion;
 
 public class Principal {
 

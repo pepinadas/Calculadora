@@ -1,6 +1,7 @@
-package com.curso.v0.operaciones;
+package org.example.operaciones;
 
-import com.curso.v0.operaciones.Interface.Operacion;
+
+import org.example.operaciones.Interface.Operacion;
 
 public class Potencia implements Operacion {
 

@@ -1,4 +1,4 @@
-package com.curso.v0.operaciones;
+package org.example.operaciones;
 
 class Division extends OperacionBase {
     @Override

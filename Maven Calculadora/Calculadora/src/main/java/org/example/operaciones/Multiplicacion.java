@@ -1,6 +1,6 @@
-package com.curso.v0.operaciones;
+package org.example.operaciones;
 
-import com.curso.v0.operaciones.Interface.Operacion;
+
 
 public class Multiplicacion extends OperacionBase {
     @Override

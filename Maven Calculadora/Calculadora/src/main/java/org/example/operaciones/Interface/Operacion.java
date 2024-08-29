@@ -1,4 +1,4 @@
-package com.curso.v0.operaciones.Interface;
+package org.example.operaciones.Interface;
 
 public interface Operacion {
 
